@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: zython
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: ZYTHON_MAX_SOURCE
+        value: "20000"
+      - key: ZYTHON_MAX_OUTPUT
+        value: "100000"
+      - key: ZYTHON_MAX_STEPS
+        value: "1000000"
